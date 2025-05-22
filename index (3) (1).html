@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>JOMPO Digital Solutions</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Welcome to JOMPO Digital Solutions</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="resources.html">Resources</a>
+      <a href="projects.html">Projects</a>
+      <a href="dream-soccer.html">Dream Soccer</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <h2>Green Technologies at JOMPO</h2>
+      <p>
+        JOMPO Digital Solutions is committed to promoting green technologies, especially renewable energy solutions like solar panel installations.
+        Our mission is to empower communities with sustainable energy and innovative agricultural practices.
+      </p>
+    </section>
+
+    <section>
+      <form id="download-form">
+        <input type="email" name="user_email" placeholder="Enter your email" required />
+        <button type="submit">Download Book</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>Contact us at maxwelogweno098@gmail.com</p>
+    <p>&copy; 2025 JOMPO Digital Solutions</p>
+  </footer>
+
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <script>
+    emailjs.init("XPLRWwgCR7uQSgf1p");
+
+    document.getElementById("download-form").addEventListener("submit", function(e) {
+      e.preventDefault();
+      emailjs.sendForm("service_ciao27d", "template_2ilyi8c", this)
+        .then(function() {
+          alert("Thanks! A download link has been sent to your email.");
+          window.location.href = "downloads/green-innovative-future.pdf";
+        }, function(error) {
+          alert("Failed to send email: " + JSON.stringify(error));
+        });
+    });
+  </script>
+</body>
+</html>
